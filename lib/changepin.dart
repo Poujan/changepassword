@@ -1,3 +1,4 @@
+import 'package:changepassword/newpin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,9 @@ class SetMpinView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // return BaseView<SetMpinVM>(
+
+    //   builder: (context, vm, child) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
@@ -72,11 +76,12 @@ class SetMpinView extends StatelessWidget {
               cursorColor: Colors.blue,
 
               obscureText: false,
+              // controller: vm.mpinController,
 
               animationType: AnimationType.fade,
 
               pinTheme: PinTheme(
-                activeFillColor: Color.fromARGB(255, 255, 255, 255),
+                activeFillColor: const Color.fromARGB(255, 255, 255, 255),
                 activeColor: Colors.blue,
                 inactiveColor: Colors.black,
                 selectedColor: Colors.blue,
@@ -104,10 +109,55 @@ class SetMpinView extends StatelessWidget {
           const SizedBox(
             height: 50.0,
           ),
-          CupertinoButton.filled(
-              child: const Text('Continue'), onPressed: () {})
+          // MytoneButton(
+
+          //             onTap: () {
+
+          //               vm.ChangeMpin(context: context);
+
+          //             },
+
+          //             title: 'Change'),
+
+          //         const SizedBox(height: 20),
+
+          //         TextButton(
+
+          //           style: TextButton.styleFrom(
+
+          //             primary: kPrimaryColor.withOpacity(0.2),
+
+          //           ), child: Text('Change Mpin'),
         ],
       )),
     );
+    // }
+    // );
   }
 }
+// ChangeMpin({required BuildContext context}) async {
+
+//     final localMpin = await MpinManager.getMpinValue();
+
+//     print('xxx local mpin $localMpin');
+
+//     // var mpinController;
+//     if (mpinController.text == localMpin) {
+
+//       LoginManager.setLogin(true);
+
+//       Navigator.pushAndRemoveUntil(
+
+//           context,
+
+//           MaterialPageRoute(builder: (context) => SetNewMpin()),
+
+//           (route) => false);
+
+//     } else {
+
+//       ErrorDialogBox.errorDialog('', 'Invalid MPIN', context);
+
+//     }
+
+  // }
